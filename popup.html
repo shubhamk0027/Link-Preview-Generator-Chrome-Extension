@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Preview Generator</title>
+    <style>
+        body{
+            display: -webkit-box;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            -webkit-box-align: center;
+            align-items: center;
+            align-content: center;
+            margin: -1 0 0 0;
+            padding: 0;
+            width:280px;
+        }
+
+        h2 {
+            color: whitesmoke;
+            background-color: rgb(112, 186, 189);
+            font-size: 1.2rem;
+            width: 100%;
+            padding:5vw;
+            margin: 0;
+            text-align: center;
+        }
+
+        button{
+            box-sizing: border-box;
+            -webkit-appearance: none;
+                -moz-appearance: none;
+                    appearance: none;
+            background-color: whitesmoke;
+            border:0;
+            border-radius: 0;
+            color: rgb(112, 186, 189);
+            cursor: pointer;
+            display: flex;
+            align-self: center;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1;
+            width: 100%;
+            margin: 0 ;
+            padding: 1.5em;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        button:hover, button:focus {
+            background-color: rgb(96, 161, 236);
+            color: white;
+            outline: 0;
+        }
+
+        #generateLink {
+            border-color: #f1c40f;
+            color: #fff;
+            background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+        }
+        #generateLink:hover {
+            background-position: 0;
+        }
+        #linkDisplay{
+            text-align: center;
+            width: 100%;
+            margin:0;
+            padding:0 10vw;
+            display: none;
+        }
+        h3{
+            font-weight: 200;
+            display: block;
+            width: 80vw;
+            overflow: hidden;
+        }
+    </style> 
+</head>
+<body>
+    <h2>Generate Link Previews for your site</h2>
+    <button id="generateButton">Generate Sharing Link</button>
+    <div id="linkDisplay">
+        <h3 id="title">Title</h3>
+        <img id="image" width="80%"/>
+        <h3 id="description">Description Here </h3>
+        <h3 id="originalUrl">http://mysite/here </h3>
+        <h3 id="shortenUrl">http://short/url/here </h3>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
