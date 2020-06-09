@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         originalUrlDisplay.innerText=message.originalUrl;
         shortUrlDisplay.innerText="Share Link: Generating...";
         
-        const baseURL = "http://localhost:8080/";
+        const baseURL = " https://84d116263b96.ngrok.io/";
 
         let xhr = new XMLHttpRequest(); 
         xhr.open("POST", baseURL+"generate" , true); 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.onreadystatechange = function () { 
             if (xhr.readyState === 4 && xhr.status === 200) { 
                 const resp = JSON.parse(this.responseText);
-                shortUrlDisplay.innerText="http://localhost:8080/"+resp.shortenUrl;
+                shortUrlDisplay.innerText=" https://84d116263b96.ngrok.io/"+resp.shortenUrl;
                 console.log(resp.shortenUrl);
             } else{
                 shortUrlDisplay.innerText=this.responseText;

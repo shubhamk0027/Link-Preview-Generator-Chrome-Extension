@@ -1,6 +1,6 @@
 // download the image and send it to the server to create a new url for it
 
-console.log("Content Script Running");
+console.log("Content Script Running for "+window.location.href);
 
 function ScrapeImageUrl(){
 
@@ -136,6 +136,7 @@ function ScrapeDescription(){
     if(ar.length) return ar[0];
     return null;
 }
+
 
 message={
     title: ScrapeTitle(),
