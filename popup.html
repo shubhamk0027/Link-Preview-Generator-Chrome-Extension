@@ -13,6 +13,7 @@
             margin: -1 0 0 0;
             padding: 0;
             width:330px;
+			overflow:hidden;
         }
 
         h2 {
@@ -41,7 +42,7 @@
             line-height: 1;
             width: 100%;
             margin: 0 ;
-            padding: 1.5em;
+            padding: 1.2em;
             text-decoration: none;
             text-align: center;
             text-transform: uppercase;
@@ -72,9 +73,11 @@
         }
         h3{
             font-weight: 200;
+			font-size: 0.8rem;
             display: block;
-            width: 80vw;
+            width: 100%;
             overflow: hidden;
+			overflow-y:hidden;
         }
     </style> 
 </head>
@@ -84,7 +87,7 @@
     <button id="generateButton">Generate Sharing Link</button>
     <div id="linkDisplay">
         <h3 id="title">Title</h3>
-        <img id="image" width="80%"/>
+        <img id="image" width="79%"/>
         <h3 id="description">Description Here </h3>
         <h3 id="originalUrl">http://mysite/here </h3>
         <h3 id="shortenUrl">http://short/url/here </h3>

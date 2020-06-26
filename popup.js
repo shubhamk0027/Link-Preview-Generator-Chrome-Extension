@@ -1,4 +1,5 @@
-// some sites does not allow sending request like geeks for geeks
+// by Shubham Kumar
+
 document.addEventListener('DOMContentLoaded', function() {
 
     const checkPageButton = document.getElementById('generateButton');
@@ -8,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const descDisplay = document.getElementById('description');
     const originalUrlDisplay = document.getElementById('originalUrl');
     const shortUrlDisplay = document.getElementById('shortenUrl');
+    const baseURL = "https://lkpw.herokuapp.com/";
 
 
     checkPageButton.addEventListener('click', function() {
         console.log("Requesting Link Generation..")
-
         chrome.tabs.executeScript({
             file:'contentScript.js'
         });
@@ -20,8 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    // get the Scraped Text ->  send it to the server -> get the shorten url
     function gotMessage(message,sender,sendResponse){
+
+        if(message.description!=null && message.description.length>200){
+            message.description=message.description.substring(0,200)+"...";
+        }
 
         linkDisplay.setAttribute("style","display:block");
         titleDisplay.innerText=message.title
@@ -30,15 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
         originalUrlDisplay.innerText=message.originalUrl;
         shortUrlDisplay.innerText="Share Link: Generating...";
         
-        const baseURL = " https://84d116263b96.ngrok.io/";
-
         let xhr = new XMLHttpRequest(); 
         xhr.open("POST", baseURL+"generate" , true); 
         xhr.setRequestHeader("Content-Type", "application/json"); 
         xhr.onreadystatechange = function () { 
             if (xhr.readyState === 4 && xhr.status === 200) { 
                 const resp = JSON.parse(this.responseText);
-                shortUrlDisplay.innerText=" https://84d116263b96.ngrok.io/"+resp.shortenUrl;
+                shortUrlDisplay.innerText=baseURL+resp.shortenUrl;
                 console.log(resp.shortenUrl);
             } else{
                 shortUrlDisplay.innerText=this.responseText;
@@ -46,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }; 
         xhr.send(JSON.stringify(message));
 
-        console.log("Request sent: "+ JSON.stringify(message));
     }
 
     chrome.runtime.onMessage.addListener(gotMessage);
