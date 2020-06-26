@@ -51,7 +51,7 @@ function ScrapeTitle(){
 
     let mainTitle = document.querySelector('title').innerText;
     if(mainTitle!=null){
-        return mainTitle.content;
+        return mainTitle;
     }
 
     return null;
@@ -76,10 +76,8 @@ function ScrapeDescription(){
     }
 
     let desc =  document.getElementsByTagName('p');
-    for(let i=0;i<desc.length;i++){
-        if(desc[i].innerText.length>30){
-            return desc[i].innerText;
-        }
+    if(desc.length>0){
+      return desc[0].innerText;
     }
 
     return null;
