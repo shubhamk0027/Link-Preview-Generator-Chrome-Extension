@@ -1,6 +1,13 @@
 # Link-Preview-Generator-Chrome-Extension
 This is the chrome extension to connect with the link preview [server](https://github.com/shubhamk0027/Link-Preview-Generator) 
 
-To use it load it as an unpacked extension in your browser and change the baseUrl variable and the server address in popup.js
+# Setup
+Clone this repository as
+    
+    git clone https://github.com/shubhamk0027/Link-Preview-Generator-Chrome-Extension.git
+    
+And load it as an unpacked extension in your chrome browser.
 
-Have a look at the [screenshots](https://drive.google.com/drive/folders/1uulDlceBVlYt1DFBRUEsLNXdUGQoKgHL?usp=sharing)
+Now, just click on the generate link button, after visiting the webpage you want to share. 
+
+
