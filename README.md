@@ -1,5 +1,8 @@
 # Link-Preview-Generator-Chrome-Extension
 This is the chrome extension to connect with the link preview [server](https://github.com/shubhamk0027/Link-Preview-Generator) 
+A sample backend server is already setup on herkou.
+
+See in [action](https://drive.google.com/file/d/1dYlpCpWg7XJz7j6U7AEOzv2VKe_Twg7x/view?usp=sharing) 
 
 # Setup
 Clone this repository as
