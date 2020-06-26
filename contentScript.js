@@ -10,7 +10,6 @@ function ScrapeImageUrl(){
     
     let imageTw = document.querySelector('meta[name="twitter:image"]');
     if(imageTw!=null && imageTw.content!=null && imageTw.content.length>0){
-        ar.push(imageTw.content);
         return imageTw.content;
     }
     
@@ -24,9 +23,9 @@ function ScrapeImageUrl(){
         return imageLink.content;
     }
 
-    Array.prototype.map.call(document.images, function (i) {
-        return i.src;
-    });
+    if(document.images.length>0){
+      return document.images[0].src;
+    }
 
     return null;
 }
